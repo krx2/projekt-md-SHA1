@@ -16,18 +16,26 @@ int main() {
     system("chcp 1250");
     system("cls");
 
-    cout << "Witaj w programie hashuj¹cym!" << endl;
-    cout << "Podaj wiadomoœæ do zakodowania:" << endl;
     string message;
-    getline(cin, message);
 
-    vector <uint32_t> result = sha1(message);
+    cout << "Witaj w programie hashuj¹cym!" << endl << endl;
+    cout << "Naciœnij crt + c aby wyjœæ." << endl << endl;
 
-    cout << "Wynik kompresji przez SHA1 to:" << endl;
-    for (uint32_t value : result) {
-        cout << hex << value;
+    while (true) {
+        cout << "Podaj wiadomoœæ do zakodowania:" << endl;
+
+        getline(cin, message);
+
+        vector <uint32_t> result = sha1(message);
+
+        cout << "Wynik kompresji przez SHA1 to:" << endl;
+        for (uint32_t value : result) {
+            cout << hex << value;
+        }
+        cout << endl << endl;
     }
-    cout << endl;
+
+    
 
     return 0;
 }
